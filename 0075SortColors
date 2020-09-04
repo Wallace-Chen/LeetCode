@@ -1,0 +1,11 @@
+class Solution {
+public:
+    void sortColors(vector<int>& nums) { // classical dutch national flag problem
+        int len = nums.size(), left = -1, right = len, pos = 0;
+        while(pos<right){
+            if(nums[pos]<1) swap(nums[pos++], nums[1+left++]);
+            else if(nums[pos]>1) swap(nums[pos], nums[-1+right--]);
+            else pos ++;
+        }
+    }
+};
